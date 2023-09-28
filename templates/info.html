@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Info</title>
+        <style>
+              /* Reset some default styles */
+              * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+              }
+
+              /* Style the form container */
+              form {
+                max-width: 400px;
+                margin: 0 auto;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                font-family: Arial, sans-serif;
+                 position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+              }
+
+              /* Style form div elements */
+              form div {
+                margin-bottom: 15px;
+              }
+
+              /* Style labels */
+              label {
+                display: block;
+                font-weight: bold;
+              }
+
+              /* Style input fields */
+              input[type="text"] {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 16px;
+              }
+
+              /* Style placeholders */
+              input::placeholder {
+                color: #888;
+              }
+
+              /* Style the submit button */
+              input[type="submit"] {
+                background-color: #007BFF;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                padding: 10px 20px;
+                cursor: pointer;
+              }
+
+              /* Hover effect for the submit button */
+              input[type="submit"]:hover {
+                background-color: #0056b3;
+              }
+        </style>
+    </head>
+
+   <body>
+    <form method = "post" action="/saveData">
+        <div>
+            <label>User Name</label>
+            <input name="name" placeholder="e.g. Mohammad">
+        </div>
+        <div>
+            <label>User Age</label>
+            <input name="age" placeholder="e.g. 23">
+        </div>
+        <div>
+            <label>Salary</label>
+            <input name="salary" placeholder="e.g. 2000">
+        </div>
+        <div>
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+   {% if users%}
+    {% for user in users%}
+    <p>{{user['name']}}</p>
+    <p>{{user['age']}}</p>
+    <p>{{user['salary']}}</p>
+    {%endfor%}
+   {%endif%}
+
+</body>
+</html>

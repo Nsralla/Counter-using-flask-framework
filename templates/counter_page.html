@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Counter</title>
+    <style>
+        /* Styles for the body */
+        body {
+            background-color: #ccc; /* Gray background color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Styles for the container */
+        .counter-container {
+            display: flex;
+            align-items: center;
+            flex-direction: column; /* Stack items vertically */
+        }
+
+        /* Styles for the minus button */
+        .counter-button {
+            background-color: #505050;
+            color: #fff;
+            border-color:white;
+            border-radius:10px;
+            width: 100px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 24px;
+            margin: 10px 0; /* Add vertical margin */
+            padding: 20px 20px;
+            font-size: 16px;
+        }
+
+
+
+
+        /* Styles for the circle containing the number */
+        .counter-circle {
+            width: 200px; /* Larger circle size */
+            height: 200px; /* Larger circle size */
+            border-radius: 50%;
+            background-color: #505050;
+            color:white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px; /* Larger font size */
+            border: 8px solid yellow; /* Thick yellow border */
+        }
+
+        .buttons-div{
+            margin-top:40px;
+            display: flex;
+            flex-direction: row;
+             justify-content: space-between;
+
+        }
+          .counter-button.minus {
+            margin-right: 30px; /* Adjust the value for desired space */
+        }
+
+        button:hover{
+            background-color:#eee;
+            color:#1c2333
+            transform:scale(1.1);
+            transition:all 0.2s ease-in-out;
+        }
+
+    </style>
+</head>
+<body>
+
+        <div class="counter-container">
+            <div class="counter-circle">{{ counter }}</div>
+            <div class="buttons-div">
+                <form method="post" action="/decrement">
+                    <button class="counter-button minus ">-</button>
+                </form>
+                <form  method="post" action="/increment">
+                    <button class="counter-button plus ">+</button>
+                </form>
+            </div>
+        </div>
+
+
+
+</body>
+
+</html>

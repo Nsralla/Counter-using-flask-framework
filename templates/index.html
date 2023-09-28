@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Input</title>
+    </head>
+    <body>
+    <form method="post" action="/render">
+      <div>
+        <input type="text" name="name" placeholder="eg.mohammad">
+        <button type="submit">Press</button>
+      </div>
+    </form>
+
+    {% if user_input %}
+        <p>Your name is {{user_input}}</p>
+    {%endif%}
+
+    </body>
+</html>

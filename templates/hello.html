@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Counter app</title>
+        </head>
+        <body>
+        <h1>Counter: {{ counter }}</h1>
+        <form method="post" action="/increment">
+            <button type="submit" name="click">click!</button>
+        </form>
+        <form method="post" action="/decrement">
+            <button type="submit" name="dont">Don't click</button>
+        </form>
+        </body>
+</html>
